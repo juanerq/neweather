@@ -1,0 +1,14 @@
+.home{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+}
+
+.home p{
+  color: var(--ft-text-color);
+  font-size: 20px;
+  margin-bottom: 20px;
+}

@@ -1,0 +1,84 @@
+.search{
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.search input {
+  border: none;
+  box-shadow: 4px 4px 0px 1px var(--ft-title-color);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 17px;
+  height: 30px;
+  outline: none;
+  padding: 0px 15px;
+  position: relative;
+  width: 200px;
+}
+
+.search input::placeholder{
+  font-family: 'Share Tech Mono', monospace;
+} 
+
+.search article, .btnSearch1{
+  position: relative;
+}
+
+.search article::before, .search article::after, .btnSearch1::before, .btnSearch1::after{
+  background: #1B956F;
+  content: "";
+  position: absolute;
+}
+
+.search article::before{
+  height: 10px;
+  left: 5px;
+  top: -5px;
+  width: 10px;
+  z-index: 1;
+}
+
+.search article::after{
+  bottom: -8px;
+  height: 15px;
+  right: -3px;
+  width: 15px;
+}
+
+.search button{
+  height: 36px;
+  background-color: var(--button-color);
+  border: none;
+  border: 2px solid var(--button-color);
+  color: var(--ft-text-color);
+  cursor: pointer;
+  font-family: 'Share Tech Mono', monospace;
+  font-weight: 900;
+}
+
+.search button::after{
+  height: 10px;
+  bottom: 0;
+  left: 0;
+  width: 10px;
+}
+
+.search button::before{
+  height: 10px;
+  right: 0;
+  top: 0;
+  width: 10px;
+}
+
+.search button:hover{
+  background-color: var(--hover-color);
+  color: var(--button-color);
+}
+
+.btnSearch1{
+  width: 100px;
+}
+
+.btnSearch2{
+  width: 40px;
+}

@@ -1,0 +1,39 @@
+.weather {
+  position: absolute;
+  z-index: 100;
+  width: 100%;
+}
+
+.weather nav{
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+
+.weather h1{
+  font-size: 35px;
+}
+
+.contInfo{
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content:center;
+}
+
+.contInfo article{
+  height: 400px;
+  background-color: rgba(236, 236, 236, 0.199);
+  display: flex;
+  gap: 30px;
+  justify-content: space-between;
+  padding: 30px;
+  width: 700px;
+}
+
+.map{
+  width: 50%;
+}

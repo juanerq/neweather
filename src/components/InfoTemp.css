@@ -1,0 +1,48 @@
+.info{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 50%;
+}
+
+.temperature{
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.temperature span{
+  color: var(--bg-dark-color);
+}
+
+.temperature span:first-child{
+  font-size: 75px;
+}
+
+.temperature span:last-child{
+  font-size: 20px;
+  width: 100%;  
+}
+
+.temperature img{
+  width: 100px;
+}
+
+.info > p{
+  color: var(--ft-title-color);
+  font-family: 'Share Tech Mono', monospace;
+  font-size: 23px;
+  line-height: 30px;
+}
+
+.info div:last-child p{
+  color: var(--sub-title-icons);
+  font-size: 18px;
+  font-weight: 500;
+  margin-top: 10px;
+}
+
+.info div:last-child span{
+  color: var(--ft-text-color);
+  font-weight: 400;
+}

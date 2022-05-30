@@ -1,0 +1,22 @@
+.mapview {
+  width: 100%;
+  position: absolute;
+  z-index: 0;
+  overflow-x: scroll;
+  overflow: hidden;
+}
+
+.mapview div {
+  position: initial;
+  width: 165%;
+}
+
+.leaflet-container {
+  width: 100w;
+  height: 100vh;
+  background-color: #151926;
+}
+
+.leaflet-control {
+  display: none
+}
