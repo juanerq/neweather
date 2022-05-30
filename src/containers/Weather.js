@@ -16,12 +16,7 @@ const Weather = () => {
           <Search choose={'btnSearch2'} setLocation={setLocation}/>
         </nav>
         <main className='contInfo'>
-          <article>
             <InfoTemp />
-            <div className='map'>
-              holaa
-            </div>
-          </article>
         </main>
       </div>
       <MapView latLng={location}/>

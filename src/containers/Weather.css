@@ -24,16 +24,23 @@
   justify-content:center;
 }
 
-.contInfo article{
-  height: 400px;
-  background-color: rgba(236, 236, 236, 0.199);
-  display: flex;
-  gap: 30px;
-  justify-content: space-between;
-  padding: 30px;
-  width: 700px;
-}
-
 .map{
   width: 50%;
+}
+
+@media (max-width: 768px) {
+  .weather nav{
+    flex-direction: column;
+    align-items: center;
+    gap: 70px;
+  }
+
+  .weather h1{
+    font-size: 45px;
+  }
+
+  .contInfo{
+    align-items: flex-start;
+  }
+  
 }

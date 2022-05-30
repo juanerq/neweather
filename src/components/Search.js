@@ -39,7 +39,7 @@ const Search = ({ choose = 'btnSearch1', setLocation}) => {
       })
     }
 
-  },[location, setLocation])
+  },[location, setLocation, choose])
   
   const handlerSearch = (e) => {
     e.preventDefault()

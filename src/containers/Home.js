@@ -1,12 +1,10 @@
 import React from 'react'
 import './Home.css'
-import { getWeateher } from '../helpers/get-weather'
 import Search from '../components/Search'
 import Social from '../components/Social'
 
 const Home = () => {
   
-  //getWeateher('london').then(console.log)
   return (
     <div className='home'>
       <h1 className='title' translate='no'>NEWEATHER</h1>

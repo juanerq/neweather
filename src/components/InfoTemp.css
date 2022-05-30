@@ -1,8 +1,12 @@
 .info{
+  background-color: rgba(236, 236, 236, 0.199);
+  height: 400px;
+  padding: 30px;
+  width: 500px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  width: 50%;
+  backdrop-filter: blur(2px);
 }
 
 .temperature{
@@ -45,4 +49,10 @@
 .info div:last-child span{
   color: var(--ft-text-color);
   font-weight: 400;
+}
+
+@media (max-width: 768px) {
+  .info{
+    margin-top: 250px;
+  }
 }
