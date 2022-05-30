@@ -2,10 +2,9 @@ import React from 'react'
 import { useFetchWeather } from '../hooks/useFetchWeather'
 import './InfoTemp.css'
 
-const InfoTemp = () => {
+const InfoTemp = ({ info }) => {
 
-  const { data } = useFetchWeather('bogota Colombia')
-  console.log(data)
+  const { data } = useFetchWeather(info)
 
   const { icon, conditionText, country, feelsLike, humidity, locationName, temperature, windSpeed } = data
 

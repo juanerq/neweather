@@ -6,7 +6,7 @@ import "leaflet-control-geocoder/dist/Control.Geocoder.modern";
 import L from "leaflet";
 
 
-const Search = ({ choose = 'btnSearch1', setLocation}) => {
+const Search = ({ choose = 'btnSearch1', setLocation, setInfo}) => {
   const [location, ] = useGeoLocation()
   const [inputValue, setInputValue] = useState('')
 
@@ -52,6 +52,8 @@ const Search = ({ choose = 'btnSearch1', setLocation}) => {
           setLocation(r?.center)
         }
       })
+    
+    setInfo(inputValue)
   }
 
   return (
