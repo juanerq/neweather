@@ -56,5 +56,7 @@
 @media (max-width: 768px) {
   .info{
     margin-top: 250px;
+    width: 400px;
+    backdrop-filter: blur(1.2px);
   }
 }

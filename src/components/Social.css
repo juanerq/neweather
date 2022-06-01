@@ -13,3 +13,11 @@ aside{
   cursor: pointer;
   text-decoration: none;
 }
+
+@media (max-width: 768px) {
+  aside{
+    top: 20px;
+    right: 20px;
+    flex-direction: row;
+  }
+}

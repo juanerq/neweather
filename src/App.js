@@ -6,8 +6,8 @@ import Weather from './containers/Weather';
 function App() {
   return (
     <main>
-      {/* <Home /> */}
-      <Weather />
+      <Home />
+      {/* <Weather /> */}
     </main>
   );
 }

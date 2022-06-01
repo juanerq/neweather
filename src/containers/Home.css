@@ -11,4 +11,12 @@
   color: var(--ft-text-color);
   font-size: 20px;
   margin-bottom: 20px;
+  text-align: center;
+  padding: 0 20px;
+}
+
+@media (max-width: 768px) {
+  .title{
+    font-size: 40px;
+  }
 }
