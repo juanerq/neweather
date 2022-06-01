@@ -82,3 +82,37 @@
 .btnSearch2{
   width: 40px;
 }
+
+
+/* Autocomplete */
+
+.list-results {
+  margin-top: 10px;
+  width: 200px;
+  background-color: aqua;
+  box-shadow: 4px 4px 0px 1px var(--button-color);
+  position: absolute;
+  z-index: 100;
+}
+
+.result {
+  border-top: 1px solid #1c213337;
+  list-style: none;
+  background-color: #fff;
+  height: 28px;
+  padding: 5px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.result p {
+  color: black;
+  font-size: 17px;
+  line-height: 22px;
+  font-family: 'Share Tech Mono', monospace;
+}
+
+.result:hover {
+  list-style: none;
+  background-color: #ececec;
+}

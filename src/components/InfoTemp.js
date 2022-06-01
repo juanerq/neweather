@@ -1,18 +1,20 @@
 import React from 'react'
 import { useFetchWeather } from '../hooks/useFetchWeather'
 import './InfoTemp.css'
+import { getImgInfoFromUrl } from '../assets/getIcon'
 
 const InfoTemp = ({ info }) => {
 
   const { data } = useFetchWeather(info)
-
-  const { icon, conditionText, country, feelsLike, humidity, locationName, temperature, windSpeed } = data
+  const { icon = '', conditionText, country, feelsLike, humidity, locationName, temperature = 0, windSpeed } = data
+  
+  let iconPixel = icon && getImgInfoFromUrl(icon)
 
   return (
     <section className='info'>
       <div className='temperature'>
         <span>{`${temperature}°`}</span>
-        <img src={icon} alt='weather'/>
+        <img src={iconPixel} alt='weather'/>
         <span>{conditionText}</span>
       </div>
       <p>{`${country}, ${locationName}`}</p>
