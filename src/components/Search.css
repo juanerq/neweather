@@ -13,7 +13,7 @@
   outline: none;
   padding: 0px 15px;
   position: relative;
-  width: 200px;
+  width: 300px;
 }
 
 .search input::placeholder{
@@ -88,7 +88,7 @@
 
 .list-results {
   margin-top: 10px;
-  width: 200px;
+  width: 300px;
   background-color: aqua;
   box-shadow: 4px 4px 0px 1px var(--button-color);
   position: absolute;
@@ -115,4 +115,10 @@
 .result:hover {
   list-style: none;
   background-color: #ececec;
+}
+
+@media (max-width: 768px) {
+  .search input{
+    width: 250px;
+  }
 }
