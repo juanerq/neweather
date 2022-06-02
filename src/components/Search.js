@@ -46,7 +46,7 @@ const Search = ({ choose = 'btnSearch1' }) => {
     e.preventDefault()
 
     const InputCon = inputRef.current.value
-    console.log(InputCon)
+
     if (InputCon) {
       setLocation(e => ({
         ...e,
