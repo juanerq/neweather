@@ -6,8 +6,6 @@ import InfoTemp from '../components/InfoTemp'
 import MapView from '../components/MapView'
 
 const Weather = () => {
-  // const [site, setSite] = useState('Colombia, Bogota');
-
   return (
     <>
       <div className='weather'>

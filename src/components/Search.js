@@ -1,26 +1,27 @@
-import { useEffect,  useRef } from 'react'
+import { useEffect,  useRef, useState } from 'react'
 import reverseGeoCoding from '../helpers/reverseGeoCoding'
 import useGeoLocation from '../hooks/useGeoLocation'
 import "leaflet-control-geocoder/dist/Control.Geocoder.modern";
 import './Search.css';
-import { NavLink } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 
 
 const Search = ({ choose = 'btnSearch1' }) => {
   const [location, setLocation] = useGeoLocation()
+  const [touch, setTouch] = useState(false)
   
   const buttons = {
     'btnSearch1': {
-      button: <NavLink to='/weather'><button className={choose} > Buscar </button></NavLink>,
+      text: 'Buscar',
       direction: 'column'
     },
     'btnSearch2':{
-      button: <button className={choose} ><i className='fa-solid fa-magnifying-glass'></i></button>,
+      text: <i className='fa-solid fa-magnifying-glass'></i>,
       direction: 'row'
     }
   }
 
-  const { button, direction } = buttons[choose]
+  const { text, direction } = buttons[choose]
 
   const inputRef = useRef(null)
 
@@ -37,20 +38,21 @@ const Search = ({ choose = 'btnSearch1' }) => {
       })
     }
 
-  },[location])
+  },[location, setLocation])
   
   const handlerSearchButton = (e) => {
     e.preventDefault()
 
     const InputCon = inputRef.current.value
+    console.log(InputCon)
     if (InputCon) {
       setLocation(e => ({
         ...e,
         site: InputCon
       }))
       inputRef.current.value = '';
+      setTouch(true)
     }
-    console.log(location)
   }
 
   return (
@@ -69,9 +71,15 @@ const Search = ({ choose = 'btnSearch1' }) => {
           />
         </article>
 
-      {button}
+      <button className={choose}> {text} </button>
+      { 
+       choose === 'btnSearch1' && touch 
+       ? <Navigate to='/weather'/>
+       : <></>
+      }
     </form>
   )
 }
+
 
 export default Search
