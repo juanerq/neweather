@@ -34,8 +34,10 @@ const Search = ({ choose = 'btnSearch1' }) => {
         if(location.CntryName) {
           const {CntryName, City} = location
           inputRef.current.value = `${CntryName} ${City}`
+          
         }
       })
+      location.loaded = false
     }
 
   },[location, setLocation])
