@@ -3,25 +3,24 @@ import reverseGeoCoding from '../helpers/reverseGeoCoding'
 import useGeoLocation from '../hooks/useGeoLocation'
 import "leaflet-control-geocoder/dist/Control.Geocoder.modern";
 import './Search.css';
+import { NavLink } from 'react-router-dom';
 
 
-const Search = ({ choose = 'btnSearch1', setSite }) => {
-  const [location, ] = useGeoLocation()
-
-  console.log(location)
+const Search = ({ choose = 'btnSearch1' }) => {
+  const [location, setLocation] = useGeoLocation()
   
   const buttons = {
     'btnSearch1': {
-      text: 'Buscar',
+      button: <NavLink to='/weather'><button className={choose} > Buscar </button></NavLink>,
       direction: 'column'
     },
     'btnSearch2':{
-      text: <i className='fa-solid fa-magnifying-glass'></i>,
+      button: <button className={choose} ><i className='fa-solid fa-magnifying-glass'></i></button>,
       direction: 'row'
     }
   }
 
-  const { text, direction } = buttons[choose]
+  const { button, direction } = buttons[choose]
 
   const inputRef = useRef(null)
 
@@ -43,11 +42,15 @@ const Search = ({ choose = 'btnSearch1', setSite }) => {
   const handlerSearchButton = (e) => {
     e.preventDefault()
 
-    if (inputRef.current.value) {
-      setSite(inputRef.current.value)
+    const InputCon = inputRef.current.value
+    if (InputCon) {
+      setLocation(e => ({
+        ...e,
+        site: InputCon
+      }))
       inputRef.current.value = '';
     }
-    
+    console.log(location)
   }
 
   return (
@@ -66,7 +69,7 @@ const Search = ({ choose = 'btnSearch1', setSite }) => {
           />
         </article>
 
-      <button className={choose} > {text} </button>
+      {button}
     </form>
   )
 }

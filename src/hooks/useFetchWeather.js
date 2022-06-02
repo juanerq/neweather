@@ -2,15 +2,15 @@ import { useContext ,useEffect, useState } from "react"
 import { PositionContext } from "../components/PositionContext"
 import { getWeateher } from "../helpers/get-weather"
 
-export const useFetchWeather = (site) => {
+export const useFetchWeather = () => {
 
   const [state, setState] = useState({
     data: [],
     loading: true
   })
-  console.log(site)
 
-  const { setLocation } = useContext(PositionContext)
+  const { location, setLocation } = useContext(PositionContext)
+  const site = location.site
   
   useEffect(() => {
     getWeateher(site)

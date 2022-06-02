@@ -6,13 +6,14 @@ const useGeoLocation = () => {
 
   useEffect(() => {
     navigator.geolocation.getCurrentPosition((location) => {
-      setLocation({
+      setLocation( e => ({
+        ...e,
         loaded: true,
         coordinates: {
           lat: location.coords.latitude,
           lng: location.coords.longitude,
         }
-      })
+      }))
     })
   }, [setLocation])
 
