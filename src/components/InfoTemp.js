@@ -3,9 +3,9 @@ import { useFetchWeather } from '../hooks/useFetchWeather'
 import './InfoTemp.css'
 import { getImgInfoFromUrl } from '../assets/getIcon'
 
-const InfoTemp = ({ info }) => {
+const InfoTemp = ({ site }) => {
 
-  const { data } = useFetchWeather(info)
+  const { data } = useFetchWeather(site)
   const { icon = '', conditionText, country, feelsLike, humidity, locationName, temperature = 0, windSpeed } = data
   
   let iconPixel = icon && getImgInfoFromUrl(icon)

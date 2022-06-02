@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { useContext ,useEffect, useState } from "react"
+import { PositionContext } from "../components/PositionContext"
 import { getWeateher } from "../helpers/get-weather"
 
 export const useFetchWeather = (site) => {
@@ -7,36 +8,40 @@ export const useFetchWeather = (site) => {
     data: [],
     loading: true
   })
+  console.log(site)
 
+  const { setLocation } = useContext(PositionContext)
+  
   useEffect(() => {
     getWeateher(site)
       .then(data => {
         
-        const { location, current } = data
-        const { country, /*localtime,*/ name } = location
-        const { condition, humidity, feelslike_c, /*is_day,*/ temp_c, wind_kph, /*wind_dir*/ } = current
+        const { location: elements, current } = data
+        const { country, name, lat, lon } = elements
+        const { condition, humidity, feelslike_c, temp_c, wind_kph } = current
         const { text, icon } = condition
 
         const body = {
           conditionText: text,
           icon: icon,
           country,
-          //localtime,
           locationName: name,
           humidity,
-          // isDay: is_day,
           feelsLike: feelslike_c,
           temperature: temp_c,
           windSpeed: wind_kph,
-          //windDir: wind_dir
+          lat,
+          lon
         }
         setState({
           data: body,
           loading: false
         })
 
+        setLocation(e =>({...e, coordinates: {lat, lon}}))
+
       })
-  }, [site])
+  }, [site, setLocation])
   
   return state
 }
