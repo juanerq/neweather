@@ -3,14 +3,7 @@ export const getWeateher = async (query) => {
   
   const url = `http://api.weatherapi.com/v1/current.json?key=${key}&q=${query}&aqi=no`
   
-  const response = await fetch(url, {
-    method: 'GET',
-    mode: 'no-cors',
-    headers: {
-      accept: 'application/json',
-    },
-  })
-  const data = await response.json()
+  const data = await ( await fetch(url) ).json
 
   return data
 }
